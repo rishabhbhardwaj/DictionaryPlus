@@ -1,16 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>DictionaryPlus</title>
-  </head>
-  <body>
-    <h1>Hello World! <br/>
-     I am DictionaryPlus.<br/>
-    Under construction.</h1>
+<head>
+  <meta charset="UTF-8">
+  <title>DictionaryPlus</title>
+
+  <!-- Angular Dependency -->
+  <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+  <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+  <script src="node_modules/angular-material/angular-material.min.js"></script>
+</head>
+<body ng-app="dictionaryPlus">
+
+  <!-- Project Imports -->
+  <script src="app.js"></script>
+  <script src="controllers/wordSearch.js"></script>
+  <script src="controllers/wotd.js"></script>
+  <script src="controllers/trends.js"></script>
+
+  <div layout="column" layout-gt-xs="column" layout-sm="column" layout-md layout-gt-md layout-lg>
+
+    <!-- Search Part -->
+    <div flex="60" id="search" ng-controller="wordSearch">
+      <div layout-xs="column" layout-gt-xs="column" layout-sm="column" layout-align="center center" layout-gt-sm>
+        <div flex="40">
+          <md-content>
+            <md-input-container>
+              <label>Enter Word</label>
+              <input ng-model="word">
+            </md-input-container>
+            <br/>
+            <md-button ng-click="getDefinition()">Submit</md-button>
+          </md-content>
+        </div>
+        <div flex="60" ng-show="showWordDef">
+          <h3>{{word}}</h3>
+        </div>
+      </div>
+    </div>
+    <md-divider></md-divider>
+    <!-- Below Part -->
+    <div flex="40">
+      <div layout-xs="row" layout-gt-xs="row" layout-sm="row"  layout-align="space-between stretch"
+      layout-gt-sm="row" layout-md="row" layout-gt-md="row" layout-lg="row">
+        <!-- Left Side -->
+        <div flex="60">
+          <h2>Word Of the Day</h2>
+        </div>
+        <md-divider></md-divider>
+        <!-- Right Side -->
+        <div flex="40">
+          <h2>Trending Words<h2/>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 
   <script>
-    require('./renderer.js')
+  require('./renderer.js')
   </script>
-</html>
+  </html>
