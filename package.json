@@ -1,0 +1,33 @@
+{
+  "name": "DictionaryPlus",
+  "version": "1.0.0",
+  "description": "A Dictionary App for MacOS, Windows and Linux.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build -mwl"
+  },
+  "repository": "https://github.com/rishabhbhardwaj/DictionaryPlus",
+  "keywords": [
+    "Dictionary",
+    "Electron"
+  ],
+  "author": "rishabhbhardwaj",
+  "devDependencies": {
+    "electron": "^1.4.1",
+    "electron-builder": "^7.13.0",
+    "electron-packager": "^8.1.0",
+    "electron-winstaller": "^2.3.4",
+    "gulp": "^3.9.1"
+  },
+  "build": {
+    "appId": "dictionaryplus",
+    "mac": {
+      "category": "education"
+    },
+    "win": {
+      "iconUrl": "http://assets2.merriam-webster.com/mw/static/app-standalone-images/MW_logo.png"
+    }
+  }
+}
